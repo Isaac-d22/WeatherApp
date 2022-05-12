@@ -9,6 +9,7 @@ module com.example.weatherapp {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires okhttp3;
 
     opens com.example.weatherapp to javafx.fxml;
     exports com.example.weatherapp;
