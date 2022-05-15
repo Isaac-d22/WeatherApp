@@ -10,7 +10,9 @@ module com.example.weatherapp {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires okhttp3;
+    requires com.google.gson;
 
     opens com.example.weatherapp to javafx.fxml;
+    opens com.example.weatherapp.OWM to com.google.gson;
     exports com.example.weatherapp;
 }
