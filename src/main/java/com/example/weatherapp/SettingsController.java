@@ -1,6 +1,7 @@
 package com.example.weatherapp;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -27,11 +28,23 @@ public class SettingsController {
     private Label currentTemperature;
 
     @FXML
+    private ChoiceBox temperature;
+
+    @FXML
+    private ChoiceBox windSpeed;
+
+    @FXML
+    private ChoiceBox distance;
+
+    @FXML
     private void initialize() {
         LocalTime start = LocalTime.parse("09:00:00");
         LocalTime stop = LocalTime.parse("21:00:00");
         LocalTime current = LocalTime.now();
         background.setStyle("-fx-background-color: #" + ((current.isAfter(start) && current.isBefore(stop))? "3e91cd" : "0b1924"));
+        temperature.getItems().addAll("Celsius", "Fahrenheit");
+        windSpeed.getItems().addAll("km/h", "mph");
+        distance.getItems().addAll("kilometers", "miles");
     }
 
     @FXML
