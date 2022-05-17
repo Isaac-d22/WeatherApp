@@ -11,6 +11,7 @@ public class HomeController implements IPageController {
 	@FXML
 	private Label currentTemperature;
 
+
 	@FXML
 	protected void onButtonClick() {
 		currentTemperature.setText("-2°");
