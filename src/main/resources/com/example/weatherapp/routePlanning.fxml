@@ -2,16 +2,16 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="backgroundPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="450.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.RoutePlanningController">
-    <children>
-        <Label fx:id="currentTemperature" alignment="CENTER" layoutX="4.0" layoutY="29.0" prefHeight="142.0" prefWidth="442.0" text="Plan route" textFill="WHITE">
-            <font>
-                <Font size="96.0" />
-            </font>
-        </Label>
-        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" text="back" />
-    </children>
-</Pane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="450.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.RoutePlanningController">
+   <children>
+      <Label fx:id="currentTemperature1" alignment="CENTER" layoutX="14.0" layoutY="39.0" prefHeight="142.0" prefWidth="442.0" text="Plan route" textFill="WHITE">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Label>
+      <Button layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#openHome" text="back" />
+   </children>
+</AnchorPane>

@@ -21,6 +21,21 @@ public class HomeController implements IPageController {
 		app.openPage(Page.Settings);
 	}
 
+	@FXML
+	protected void openRoutePlanning() {
+		app.openPage(Page.RoutePlanning);
+	}
+
+	@FXML
+	protected void openMoreInfo() {
+		app.openPage(Page.MoreInfo);
+	}
+
+	@FXML
+	protected void openOtherLocations() {
+		app.openPage(Page.OtherLocations);
+	}
+
 	@Override
 	public void setApp(AppController app) {
 		this.app = app;
