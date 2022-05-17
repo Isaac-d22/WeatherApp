@@ -13,20 +13,21 @@
          </font>
       </Label>
       <Button layoutX="200.0" layoutY="411.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" text="Test" />
-      <Button layoutY="731.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="144.0" text="More Info">
+      <Button layoutY="731.0" mnemonicParsing="false" onMouseClicked="#openMoreInfo" prefHeight="78.0" prefWidth="144.0" text="More Info">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="299.0" layoutY="731.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="151.0" text="Other Locations">
+      <Button layoutX="299.0" layoutY="731.0" mnemonicParsing="false" onMouseClicked="#openOtherLocations" prefHeight="78.0" prefWidth="151.0" text="Other Locations">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="731.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="159.0" text="Plan Route">
+      <Button layoutX="141.0" layoutY="731.0" mnemonicParsing="false" onMouseClicked="#openRoutePlanning" prefHeight="78.0" prefWidth="159.0" text="Plan Route">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
+      <Button layoutX="20.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#openSettings" text="Settings" />
    </children>
 </AnchorPane>

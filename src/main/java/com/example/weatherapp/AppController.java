@@ -3,12 +3,7 @@ package com.example.weatherapp;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.time.LocalTime;
@@ -23,9 +18,13 @@ public class AppController {
 	private AnchorPane page;
 	@FXML
 	private void initialize() throws IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource(Page.Home.fxml));
-		AnchorPane pagePane = loader.load();
-		pageNodes.put(Page.Home, pagePane);
+		for (Page page: new Page[] {Page.Home, Page.Settings, Page.RoutePlanning}) {
+			FXMLLoader loader = new FXMLLoader(getClass().getResource(page.fxml));
+			AnchorPane pagePane = loader.load();
+			IPageController pageController = loader.getController();
+			pageController.setApp(this);
+			pageNodes.put(page, pagePane);
+		}
 
 		LocalTime start = LocalTime.parse("09:00:00");
 		LocalTime stop = LocalTime.parse("21:00:00");
@@ -34,5 +33,10 @@ public class AppController {
 
 		background.getChildren().remove(0);
 		background.getChildren().add(pageNodes.get(Page.Home));
+	}
+
+	public void openPage(Page page) {
+		background.getChildren().remove(0);
+		background.getChildren().add(pageNodes.getOrDefault(page, pageNodes.get(Page.Home)));
 	}
 }
