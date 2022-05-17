@@ -36,6 +36,7 @@ public class HomeController implements IPageController {
 		app.openPage(Page.OtherLocations);
 	}
 
+
 	@Override
 	public void setApp(AppController app) {
 		this.app = app;

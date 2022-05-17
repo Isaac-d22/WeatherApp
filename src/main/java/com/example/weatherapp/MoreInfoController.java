@@ -8,7 +8,8 @@ import javafx.scene.layout.VBox;
 
 import java.time.LocalTime;
 
-public class MoreInfoController {
+public class MoreInfoController implements IPageController{
+    private AppController app;
     @FXML
     private AnchorPane background;
     @FXML
@@ -24,7 +25,7 @@ public class MoreInfoController {
         LocalTime current = LocalTime.now();
         background.setStyle("-fx-background-color: #" + ((current.isAfter(start) && current.isBefore(stop))? "3e91cd" : "0b1924"));
         lv.getItems().add("Temperature: " + info.main.get("temp"));
-        lv.getItems().add("Win: " + info.wind.get("speed"));
+        lv.getItems().add("Wind: " + info.wind.get("speed"));
         //currentTemperature.setText("Temperature: " + info.main.get("temp"));
         //currentWind.setText("Rain: " + info.wind.get("speed"));
         //v = new VBox(currentTemperature, currentWind);
@@ -33,5 +34,10 @@ public class MoreInfoController {
     @FXML
     protected void onButtonClick() {
         return;
+    }
+
+    @Override
+    public void setApp(AppController app) {
+            this.app = app;
     }
 }
