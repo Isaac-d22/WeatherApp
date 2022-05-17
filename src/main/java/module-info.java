@@ -8,7 +8,9 @@ module com.example.weatherapp {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
+    requires okhttp3;
+    requires com.google.gson;
 
-    opens com.example.weatherapp to javafx.fxml;
+    opens com.example.weatherapp to com.google.gson, javafx.fxml;
     exports com.example.weatherapp;
 }
