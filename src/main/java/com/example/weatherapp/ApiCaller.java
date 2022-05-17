@@ -7,16 +7,11 @@ import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.util.Map;
-import java.util.HashMap;
-
 
 public class ApiCaller {
 
     private static final String geocodeKey = "ZmMyYjdmMjc1ZTQ2NGM4NjhjYTBkNTg2YTNmYzBhYWE6NTZlNTM1ZWYtMTlkZi00ODUzLWJjMTAtOTdlMmJiYTRlMGE0";
     private static final String weatherKey = "afcc86076e8c2f5fb1627987be38d419";
-
-    public static void main(String[] args){
-    }
 
     public static WeatherApiResponse getStats(String location){
         try{
