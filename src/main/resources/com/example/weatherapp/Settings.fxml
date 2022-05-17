@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<Pane fx:id="backgroundPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="450.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.SettingsController">
+<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="450.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.SettingsController">
     <children>
         <Label fx:id="currentTemperature" alignment="CENTER" layoutX="4.0" layoutY="29.0" prefHeight="142.0" prefWidth="442.0" text="Settings" textFill="WHITE">
             <font>
@@ -13,5 +15,48 @@
             </font>
         </Label>
         <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" text="back" />
+      <Label fx:id="currentTemperature1" alignment="CENTER" layoutX="115.0" layoutY="164.0" prefHeight="43.0" prefWidth="221.0" text="Units:" textFill="WHITE">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentTemperature11" alignment="CENTER" layoutX="115.0" layoutY="379.0" prefHeight="43.0" prefWidth="221.0" text="Metrics:" textFill="WHITE">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <ChoiceBox layoutX="151.0" layoutY="221.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="151.0" layoutY="271.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="151.0" layoutY="327.0" prefWidth="150.0" />
+      <Label fx:id="currentTemperature12" alignment="BASELINE_RIGHT" layoutX="5.0" layoutY="429.0" prefHeight="43.0" prefWidth="221.0" text="Wind direction" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentTemperature121" alignment="BASELINE_RIGHT" layoutX="5.0" layoutY="472.0" prefHeight="43.0" prefWidth="221.0" text="Humidity" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentTemperature122" alignment="BASELINE_RIGHT" layoutX="5.0" layoutY="515.0" prefHeight="43.0" prefWidth="221.0" text="Pollen count" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentTemperature123" alignment="BASELINE_RIGHT" layoutX="5.0" layoutY="558.0" prefHeight="43.0" prefWidth="221.0" text="Ice risk" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentTemperature124" alignment="BASELINE_RIGHT" layoutX="5.0" layoutY="601.0" prefHeight="43.0" prefWidth="221.0" text="Storm risk" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <CheckBox layoutX="261.0" layoutY="442.0" mnemonicParsing="false" />
+      <CheckBox layoutX="261.0" layoutY="485.0" mnemonicParsing="false" />
+      <CheckBox layoutX="261.0" layoutY="528.0" mnemonicParsing="false" />
+      <CheckBox layoutX="261.0" layoutY="571.0" mnemonicParsing="false" text="CheckBox" />
+      <CheckBox layoutX="261.0" layoutY="614.0" mnemonicParsing="false" text="CheckBox" />
     </children>
-</Pane>
+</AnchorPane>
