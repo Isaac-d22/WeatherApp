@@ -5,17 +5,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.AppController">
    <children>
-      <AnchorPane fx:id="page" prefHeight="800.0" prefWidth="450.0">
+      <AnchorPane fx:id="page" layoutY="-35.0" prefHeight="800.0" prefWidth="450.0">
          <children>
             <Label fx:id="currentTemperature" layoutX="149.0" layoutY="118.0" text=" 18°" textFill="WHITE">
                <font>
                   <Font size="96.0" />
                </font>
             </Label>
-            <Button layoutX="206.0" layoutY="286.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" text="Test" />
+            <Button layoutX="200.0" layoutY="411.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" text="Test" />
+            <Button layoutY="731.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="144.0" text="More Info">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="299.0" layoutY="731.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="151.0" text="Other Locations">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="141.0" layoutY="731.0" mnemonicParsing="false" prefHeight="78.0" prefWidth="159.0" text="Plan Route">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
