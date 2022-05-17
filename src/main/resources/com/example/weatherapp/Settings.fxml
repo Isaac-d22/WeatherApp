@@ -14,20 +14,20 @@
                 <Font size="96.0" />
             </font>
         </Label>
-        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" text="back" />
-      <Label fx:id="Units" alignment="CENTER" layoutX="115.0" layoutY="164.0" prefHeight="43.0" prefWidth="221.0" text="Units:" textFill="WHITE">
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openHome" text="back" />
+      <Label fx:id="currentTemperature1" alignment="CENTER" layoutX="115.0" layoutY="164.0" prefHeight="43.0" prefWidth="221.0" text="Units:" textFill="WHITE">
          <font>
             <Font size="33.0" />
          </font>
       </Label>
-      <Label fx:id="Metrics" alignment="CENTER" layoutX="115.0" layoutY="379.0" prefHeight="43.0" prefWidth="221.0" text="Metrics:" textFill="WHITE">
+      <Label fx:id="currentTemperature11" alignment="CENTER" layoutX="115.0" layoutY="379.0" prefHeight="43.0" prefWidth="221.0" text="Metrics:" textFill="WHITE">
          <font>
             <Font size="33.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="temperature" layoutX="244.0" layoutY="232.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="windSpeed" layoutX="244.0" layoutY="278.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="distance" layoutX="244.0" layoutY="333.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="151.0" layoutY="221.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="151.0" layoutY="271.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="151.0" layoutY="327.0" prefWidth="150.0" />
       <Label fx:id="currentTemperature12" alignment="BASELINE_RIGHT" layoutX="5.0" layoutY="429.0" prefHeight="43.0" prefWidth="221.0" text="Wind direction" textFill="WHITE">
          <font>
             <Font size="20.0" />
@@ -56,22 +56,7 @@
       <CheckBox layoutX="261.0" layoutY="442.0" mnemonicParsing="false" />
       <CheckBox layoutX="261.0" layoutY="485.0" mnemonicParsing="false" />
       <CheckBox layoutX="261.0" layoutY="528.0" mnemonicParsing="false" />
-      <CheckBox layoutX="261.0" layoutY="571.0" mnemonicParsing="false" />
-      <CheckBox layoutX="261.0" layoutY="614.0" mnemonicParsing="false" />
-      <Label fx:id="currentTemperature125" alignment="BASELINE_RIGHT" layoutX="5.0" layoutY="223.0" prefHeight="43.0" prefWidth="221.0" text="Temperature" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="currentTemperature1251" alignment="BASELINE_RIGHT" layoutX="5.0" layoutY="269.0" prefHeight="43.0" prefWidth="221.0" text="Wind speed" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="currentTemperature1252" alignment="BASELINE_RIGHT" layoutX="14.0" layoutY="324.0" prefHeight="43.0" prefWidth="221.0" text="Distance" textFill="WHITE">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
+      <CheckBox layoutX="261.0" layoutY="571.0" mnemonicParsing="false" text="CheckBox" />
+      <CheckBox layoutX="261.0" layoutY="614.0" mnemonicParsing="false" text="CheckBox" />
     </children>
 </AnchorPane>
