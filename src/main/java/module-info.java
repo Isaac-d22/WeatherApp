@@ -12,7 +12,6 @@ module com.example.weatherapp {
     requires okhttp3;
     requires com.google.gson;
 
-    opens com.example.weatherapp to javafx.fxml;
-    opens com.example.weatherapp.OWM to com.google.gson;
+    opens com.example.weatherapp to com.google.gson, javafx.fxml;
     exports com.example.weatherapp;
 }

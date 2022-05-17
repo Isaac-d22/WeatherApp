@@ -1,6 +1,5 @@
-package com.example.weatherapp.OWM;
+package com.example.weatherapp;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
