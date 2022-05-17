@@ -9,11 +9,11 @@ import java.time.LocalTime;
 import java.io.IOException;
 
 public class Application extends javafx.application.Application {
-    private Controller appController;
+    private SettingsController appController;
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("home-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Settings.fxml"));
         Parent root = fxmlLoader.load();
         appController = fxmlLoader.getController();
         Scene scene = new Scene(root, 450, 800);
