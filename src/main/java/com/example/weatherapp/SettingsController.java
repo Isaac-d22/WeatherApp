@@ -40,6 +40,11 @@ public class SettingsController implements IPageController {
         currentTemperature.setText("-2°");
     }
 
+    @FXML
+    protected void openHome() {
+        app.openPage(Page.Home);
+    }
+
     @Override
     public void setApp(AppController app) {
         this.app = app;

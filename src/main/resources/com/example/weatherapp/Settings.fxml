@@ -14,7 +14,7 @@
                 <Font size="96.0" />
             </font>
         </Label>
-        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" text="back" />
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openHome" text="back" />
       <Label fx:id="currentTemperature1" alignment="CENTER" layoutX="115.0" layoutY="164.0" prefHeight="43.0" prefWidth="221.0" text="Units:" textFill="WHITE">
          <font>
             <Font size="33.0" />
