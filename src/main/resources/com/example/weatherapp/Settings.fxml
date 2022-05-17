@@ -14,7 +14,7 @@
                 <Font size="96.0" />
             </font>
         </Label>
-        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" text="back" />
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openHome" text="back" />
       <Label fx:id="currentTemperature1" alignment="CENTER" layoutX="115.0" layoutY="164.0" prefHeight="43.0" prefWidth="221.0" text="Units:" textFill="WHITE">
          <font>
             <Font size="33.0" />
@@ -25,9 +25,9 @@
             <Font size="33.0" />
          </font>
       </Label>
-      <ChoiceBox layoutX="151.0" layoutY="221.0" prefWidth="150.0" />
-      <ChoiceBox layoutX="151.0" layoutY="271.0" prefWidth="150.0" />
-      <ChoiceBox layoutX="151.0" layoutY="327.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="temperature" layoutX="151.0" layoutY="221.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="windSpeed" layoutX="151.0" layoutY="271.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="distance" layoutX="151.0" layoutY="327.0" prefWidth="150.0" />
       <Label fx:id="currentTemperature12" alignment="BASELINE_RIGHT" layoutX="5.0" layoutY="429.0" prefHeight="43.0" prefWidth="221.0" text="Wind direction" textFill="WHITE">
          <font>
             <Font size="20.0" />
