@@ -16,8 +16,6 @@ public class ApiCaller {
     private static final String weatherKey = "afcc86076e8c2f5fb1627987be38d419";
 
     public static void main(String[] args){
-        WeatherApiResponse response = getStats("aan%27t%20verlaat%2033f%20");
-        System.out.println(response.coord);
     }
 
     public static WeatherApiResponse getStats(String location){
