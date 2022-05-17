@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="page" prefHeight="800.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.HomeController">
@@ -32,5 +33,21 @@
          <font>
             <Font size="18.0" />
          </font></Button>
+      <Label fx:id="location" layoutX="7.0" layoutY="335.0" text="Location" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Line endX="451.0" endY="383.5" startY="383.5" />
+      <Label fx:id="chanceOfRain" layoutX="7.0" layoutY="400.0" text="Chance of rain:" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="windSpeed" layoutX="7.0" layoutY="458.0" text="Wind speed:" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
