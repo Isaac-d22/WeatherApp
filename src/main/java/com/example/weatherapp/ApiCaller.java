@@ -6,39 +6,49 @@ import okhttp3.ResponseBody;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.util.Map;
+import java.util.HashMap;
+
 
 public class ApiCaller {
 
+    private static final String geocodeKey = "ZmMyYjdmMjc1ZTQ2NGM4NjhjYTBkNTg2YTNmYzBhYWE6NTZlNTM1ZWYtMTlkZi00ODUzLWJjMTAtOTdlMmJiYTRlMGE0";
+    private static final String weatherKey = "afcc86076e8c2f5fb1627987be38d419";
+
     public static void main(String[] args){
-        // write your code here
-        System.out.println("hello");
-        getStats();
+        WeatherApiResponse response = getStats("aan%27t%20verlaat%2033f%20");
+        System.out.println(response.coord);
     }
 
-    public static ApiResponse getStats(){
+    public static WeatherApiResponse getStats(String location){
         try{
             OkHttpClient client = new OkHttpClient().newBuilder()
                     .build();
-            Request request = new Request.Builder()
-                    .url("https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=afcc86076e8c2f5fb1627987be38d419").build();
-            ResponseBody response = client.newCall(request).execute().body();
-            //System.out.println(response.string());
-            Gson gson = new Gson();
-            ApiResponse json = gson.fromJson(response.string(), ApiResponse.class);
-            //System.out.println(json.main.get("feels_like")); //Seems to be a rounding error
-            //JsonObject json = gson.fromJson(response.string(), JsonObject.class);
-            //System.out.println(json.sys.get("sunrise"));
-            return json;
-        }catch (IOException e){
+
+            Request geocodeRequest = new Request.Builder()
+                    .url(String.format(
+                            "https://api.myptv.com/geocoding/v1/locations/by-text?searchText=%s&apiKey=%s", location, geocodeKey)).build();
+
+            ResponseBody geocodeResponse = client.newCall(geocodeRequest).execute().body();
+
+            Gson geocodeGson = new Gson();
+            GeocodeApiResponse geocode = geocodeGson.fromJson(geocodeResponse.string(), GeocodeApiResponse.class);
+            Map coords = (Map<String, Double>)geocode.locations.get(0).get("referencePosition");
+            double latitudeDouble = (double)coords.get("latitude");
+            double longitudeDouble = (double)coords.get("longitude");
+            String lat = String.valueOf(latitudeDouble);
+            String lon = String.valueOf(longitudeDouble);
+
+            Request weatherRequest = new Request.Builder()
+                    .url(String.format(
+                            "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s", lat, lon, weatherKey)).build();
+
+            ResponseBody weatherResponse = client.newCall(weatherRequest).execute().body();
+            Gson weatherGson = new Gson();
+            return weatherGson.fromJson(weatherResponse.string(), WeatherApiResponse.class);
+        } catch (IOException e){
             System.out.println(e.getMessage());
             return null;
         }
     }
 }
-
-//{"coord":{"lon":139,"lat":35},"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10n"}]
-// ,"base":"stations","main":{"temp":286.1,"feels_like":285.96,"temp_min":286.1,"temp_max":286.1,
-// "pressure":1016,"humidity":96},"visibility":10000,"wind":{"speed":0.32,"deg":320,"gust":0.7},
-// "rain":{"1h":0.11},"clouds":{"all":100},"dt":1652783611,
-// "sys":{"type":2,"id":2019346,"country":"JP","sunrise":1652729970,"sunset":1652780488},
-// "timezone":32400,"id":1851632,"name":"Shuzenji","cod":200}

@@ -3,7 +3,7 @@ package com.example.weatherapp;
 import java.util.HashMap;
 import java.util.List;
 
-public class ApiResponse {
+public class WeatherApiResponse {
 
     HashMap<String, Double> coord;
     List<Weather> weather;
