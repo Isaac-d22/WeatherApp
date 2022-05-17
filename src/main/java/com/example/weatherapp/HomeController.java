@@ -1,16 +1,11 @@
 package com.example.weatherapp;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
-import java.time.LocalTime;
-import java.util.HashMap;
-
-public class HomeController {
+public class HomeController implements IPageController {
+	private AppController app;
 	@FXML
 	private AnchorPane page;
 	@FXML
@@ -19,5 +14,15 @@ public class HomeController {
 	@FXML
 	protected void onButtonClick() {
 		currentTemperature.setText("-2°");
+	}
+
+	@FXML
+	protected void openSettings() {
+		app.openPage(Page.Settings);
+	}
+
+	@Override
+	public void setApp(AppController app) {
+		this.app = app;
 	}
 }

@@ -18,7 +18,8 @@ import java.time.LocalTime;
 
 import java.time.LocalTime;
 
-public class SettingsController {
+public class SettingsController implements IPageController {
+    private AppController app;
     @FXML
     private AnchorPane background;
     @FXML
@@ -37,5 +38,10 @@ public class SettingsController {
     @FXML
     protected void onButtonClick() {
         currentTemperature.setText("-2°");
+    }
+
+    @Override
+    public void setApp(AppController app) {
+        this.app = app;
     }
 }

@@ -6,7 +6,7 @@ public enum Page {
 	OtherLocations("OtherLocations.fxml"),
 	RoutePlanning("routePlanning.fxml"),
 	ViewRoute("viewRoute.fxml"),
-	Settings("settings.fxml");
+	Settings("Settings.fxml");
 
 	public final String fxml;
 
