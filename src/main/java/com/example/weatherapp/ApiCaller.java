@@ -9,13 +9,13 @@ import java.io.IOException;
 
 public class ApiCaller {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         // write your code here
         System.out.println("hello");
         getStats();
     }
 
-    public static ApiResponse getStats() throws IOException {
+    public static ApiResponse getStats(){
         try{
             OkHttpClient client = new OkHttpClient().newBuilder()
                     .build();
