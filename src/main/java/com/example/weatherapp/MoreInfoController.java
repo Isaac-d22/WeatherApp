@@ -40,4 +40,9 @@ public class MoreInfoController implements IPageController{
     public void setApp(AppController app) {
             this.app = app;
     }
+
+    @FXML
+    protected void returnHome() {
+        app.openPage(Page.Home);
+    }
 }
