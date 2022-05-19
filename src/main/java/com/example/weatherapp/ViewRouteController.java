@@ -1,9 +1,13 @@
 package com.example.weatherapp;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -24,19 +28,22 @@ public class ViewRouteController implements IPageController{
     private Button loadResults;
 
     @FXML
-    private TableView table;
+    private TableView<WeatherInfo> table;
 
     @FXML
-    private TableColumn location1;
+    private TableColumn<WeatherInfo, String> location1;
 
     @FXML
-    private TableColumn temperature;
+    private TableColumn<WeatherInfo, String> temperature;
 
     @FXML
-    private TableColumn rain;
+    private TableColumn<WeatherInfo, String> rain;
 
     @FXML
-    private TableColumn wind;
+    private TableColumn<WeatherInfo, String> wind;
+
+    @FXML
+    private Button loadButton;
 
     @FXML
     private void initialize() {
@@ -44,6 +51,10 @@ public class ViewRouteController implements IPageController{
         LocalTime stop = LocalTime.parse("21:00:00");
         LocalTime current = LocalTime.now();
         background.setStyle("-fx-background-color: #" + ((current.isAfter(start) && current.isBefore(stop))? "3e91cd" : "0b1924"));
+        location1.setCellValueFactory(new PropertyValueFactory<>("location1"));
+        temperature.setCellValueFactory(new PropertyValueFactory<>("temperature"));
+        rain.setCellValueFactory(new PropertyValueFactory<>("rain"));
+        wind.setCellValueFactory(new PropertyValueFactory<>("wind"));
     }
 
 
@@ -58,24 +69,22 @@ public class ViewRouteController implements IPageController{
     }
 
     public void loadRoute(MouseEvent mouseEvent) {
+        ObservableList<WeatherInfo> data = FXCollections.observableArrayList();
+        loadButton.setText("Loading...");
         ArrayList<WeatherInfo> weatherInfo;
         for (String location : app.locations) {
-            WeatherInfo info = new WeatherInfo();
-            info.placeName = location;
+            String placeName = location;
             location = location.replaceAll(" ", "%20");
             location = location.replaceAll("'", "%27");
             location = location.replaceAll(",", "%2C");
             WeatherApiResponse weatherAtLocation = ApiCaller.getStatsAtStreetName(location);
-            //info.temperature = weatherAtLocation.temperature;
-            //info.rainChance = weatherAtLocation.rainChance;
-            //info.windSpeed = weatherAtLocation.windSpeed;
+            String temp = weatherAtLocation.current.temp;
+            String rainChance = "";
+            String windSpeed = weatherAtLocation.current.wind_speed;
+            WeatherInfo info = new WeatherInfo(placeName, temp, rainChance, windSpeed);
+            data.add(info);
         }
+        this.table.setItems(data);
+        loadButton.setText("Update results");
     }
-}
-
-class WeatherInfo {
-    String placeName;
-    String temperature;
-    String rainChance;
-    String windSpeed;
 }
