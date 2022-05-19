@@ -35,6 +35,11 @@ public class RoutePlanningController implements IPageController {
         app.openPage(Page.Home);
     }
 
+    @FXML
+    protected void openViewRoute() {
+        app.openPage(Page.ViewRoute);
+    }
+
     @Override
     public void setApp(AppController app) {
         this.app = app;
