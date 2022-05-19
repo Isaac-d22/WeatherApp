@@ -64,4 +64,9 @@ public class RoutePlanningController implements IPageController {
         input = input.replaceAll(",", "%2C");
         app.locations.add(input);
     }
+
+    public void clearLocations() {
+        locationsList.getItems().clear();
+        app.locations.clear();
+    }
 }
