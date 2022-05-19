@@ -11,8 +11,12 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class RoutePlanningController implements IPageController {
+
+    ArrayList<String> locations;
+
     private AppController app;
     @FXML
     private Pane background;
@@ -23,6 +27,7 @@ public class RoutePlanningController implements IPageController {
 
     @FXML
     private void initialize() {
+        locations = new ArrayList<String>();
         LocalTime start = LocalTime.parse("09:00:00");
         LocalTime stop = LocalTime.parse("21:00:00");
         LocalTime current = LocalTime.now();
@@ -45,7 +50,13 @@ public class RoutePlanningController implements IPageController {
     }
 
     public void addLocation(MouseEvent mouseEvent) {
-        locationsList.getItems().add(inputLocation.getText());
+        String input = inputLocation.getText();
+        // Santise input
+        if (!input.matches("[a-zA-Z0-9' ,]+") || input.isEmpty()){
+            return;
+        }
+        locations.add(input);
+        locationsList.getItems().add(input);
         inputLocation.setText("");
     }
 }
