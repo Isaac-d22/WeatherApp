@@ -33,17 +33,17 @@
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Label fx:id="location" layoutX="161.0" layoutY="369.0" text="..." textFill="WHITE">
+      <Label fx:id="location1" layoutX="161.0" layoutY="369.0" text="..." textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="chanceOfRain" layoutX="245.0" layoutY="413.0" prefHeight="19.0" prefWidth="0.0" text="..." textFill="WHITE">
+      <Label fx:id="currentTemp" layoutX="245.0" layoutY="413.0" prefHeight="19.0" prefWidth="0.0" text="..." textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="windSpeed" layoutX="209.0" layoutY="468.0" text="..." textFill="WHITE">
+      <Label fx:id="windspeed" layoutX="209.0" layoutY="468.0" text="..." textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
@@ -53,7 +53,7 @@
             <Font size="36.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="14.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chance of rain:">
+      <Text fill="WHITE" layoutX="14.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature:">
          <font>
             <Font size="36.0" />
          </font>

@@ -26,9 +26,9 @@ public class HomeController implements IPageController {
 		LocalTime stop = LocalTime.parse("21:00:00");
 		LocalTime current = LocalTime.now();
 		page.setStyle("-fx-background-color: #" + ((current.isAfter(start) && current.isBefore(stop))? "3e91cd" : "0b1924"));
-		location1.setText("Location: " + info.name);
-		currentTemp.setText("Temperature: "+ info.main.get("temp"));
-		windspeed.setText("Wind speed: "+ info.wind.get("speed"));
+		location1.setText(info.name);
+		currentTemp.setText(info.main.get("temp").toString());
+		windspeed.setText(info.wind.get("speed").toString());
 	}
 
 
