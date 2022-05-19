@@ -20,6 +20,9 @@ public class HomeController implements IPageController {
 	private Label windspeed;
 
 	@FXML
+	private Label chanceOfRain;
+
+	@FXML
 	private void initialize() {
 		WeatherApiResponse info = ApiCaller.getStatsAtStreetName("aan%27t%20verlaat%2033f%20");
 		LocalTime start = LocalTime.parse("09:00:00");

@@ -60,8 +60,11 @@ public class RoutePlanningController implements IPageController {
         } else {
             errorLocation.setText("");
         }
-        locations.add(input);
         locationsList.getItems().add(input);
         inputLocation.setText("");
+        input = input.replaceAll(" ", "%20");
+        input = input.replaceAll("'", "%27");
+        input = input.replaceAll(",", "%2C");
+        locations.add(input);
     }
 }
