@@ -15,7 +15,7 @@
             <ListView fx:id="lv" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </VBox>
-      <Label fx:id="name" layoutX="142.0" layoutY="51.0" prefHeight="53.0" prefWidth="166.0" text="Unavailable" textFill="WHITE">
+      <Label fx:id="name" alignment="CENTER" layoutX="142.0" layoutY="51.0" prefHeight="53.0" prefWidth="166.0" text="Unavailable" textFill="WHITE">
          <font>
             <Font size="32.0" />
          </font></Label>
