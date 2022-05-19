@@ -21,7 +21,7 @@
        <TableColumn fx:id="location" prefWidth="180.0" text="Location:" />
        <TableColumn fx:id="temperture" prefWidth="83.0" text="Temperature:" />
          <TableColumn fx:id = "rain" prefWidth="47.0" text="\% rain:" />
-         <TableColumn prefWidth="75.0" text="Wind speed:" />
+         <TableColumn fx:id = "wind" prefWidth="75.0" text="Wind speed:" />
      </columns>
    </TableView>
     

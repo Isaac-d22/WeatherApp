@@ -2,6 +2,7 @@ package com.example.weatherapp;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -13,6 +14,18 @@ public class ViewRouteController implements IPageController{
     private AppController app;
     @FXML
     private AnchorPane background;
+
+    @FXML
+    private TableColumn location;
+
+    @FXML
+    private TableColumn temperature;
+
+    @FXML
+    private TableColumn rain;
+
+    @FXML
+    private TableColumn wind;
 
     @FXML
     private void initialize() {
