@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.MoreInfoController">
    <children>
-      <Button layoutX="23.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#returnHome" text="Back" />
+      <Button contentDisplay="CENTER" layoutX="23.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#returnHome" text="Back" />
       <VBox layoutY="130.0" prefHeight="579.0" prefWidth="450.0">
          <children>
             <ListView fx:id="lv" prefHeight="200.0" prefWidth="200.0" />
