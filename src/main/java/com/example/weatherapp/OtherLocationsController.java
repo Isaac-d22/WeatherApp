@@ -7,11 +7,11 @@ import javafx.scene.layout.AnchorPane;
 import java.time.LocalTime;
 
 
-public class OtherLocationsController {
+public class OtherLocationsController implements IPageController {
+    private AppController app;
+
     @FXML
     private AnchorPane background;
-    @FXML
-    private AnchorPane page;
     @FXML
     private Label currentTemperature;
 
@@ -24,7 +24,12 @@ public class OtherLocationsController {
     }
 
     @FXML
-    protected void onButtonClick() {
-        currentTemperature.setText("-2°");
+    protected void openHome() {
+        app.openPage(Page.Home);
+    }
+
+    @Override
+    public void setApp(AppController app) {
+        this.app = app;
     }
 }
