@@ -15,25 +15,25 @@
             </font>
         </Label>
         <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openHome" prefWidth="59.0" text="back" />
-      <TextField fx:id="inputLocation" layoutX="99.0" layoutY="254.0" />
+      <TextField fx:id="inputLocation" layoutX="88.0" layoutY="254.0" prefHeight="38.0" prefWidth="202.0" />
       <Label alignment="CENTER" layoutX="49.0" layoutY="204.0" prefHeight="38.0" prefWidth="366.0" text="Please enter locations on route below:" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="75.0" layoutY="341.0" prefHeight="38.0" prefWidth="299.0" text="List of locations:" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="76.0" layoutY="333.0" prefHeight="38.0" prefWidth="299.0" text="List of locations:" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="145.0" layoutY="695.0" mnemonicParsing="false" onMouseClicked="#openViewRoute" prefHeight="76.0" prefWidth="160.0" text="View route">
+      <Button layoutX="145.0" layoutY="694.0" mnemonicParsing="false" onMouseClicked="#openViewRoute" prefHeight="76.0" prefWidth="160.0" text="View route">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="272.0" layoutY="254.0" mnemonicParsing="false" onMouseReleased="#addLocation" text="Add stop" />
-      <ListView fx:id="locationsList" layoutX="114.0" layoutY="400.0" prefHeight="244.0" prefWidth="221.0" />
-      <Label fx:id="errorLocation" alignment="CENTER" layoutX="88.0" layoutY="290.0" prefHeight="17.0" prefWidth="275.0" textAlignment="CENTER" textFill="#ffe81a">
+      <Button layoutX="297.0" layoutY="254.0" mnemonicParsing="false" onMouseReleased="#addLocation" prefHeight="38.0" prefWidth="76.0" text="Add stop" />
+      <ListView fx:id="locationsList" layoutX="88.0" layoutY="380.0" prefHeight="283.0" prefWidth="285.0" />
+      <Label fx:id="errorLocation" alignment="CENTER" layoutX="88.0" layoutY="303.0" prefHeight="17.0" prefWidth="275.0" textAlignment="CENTER" textFill="#ffe81a">
          <font>
             <Font size="15.0" />
          </font></Label>
