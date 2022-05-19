@@ -38,11 +38,6 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="currentTemp" layoutX="245.0" layoutY="413.0" prefHeight="19.0" prefWidth="0.0" text="..." textFill="WHITE">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
       <Label fx:id="windspeed" layoutX="209.0" layoutY="468.0" text="..." textFill="WHITE">
          <font>
             <Font size="36.0" />
@@ -63,5 +58,10 @@
             <Font size="36.0" />
          </font>
       </Text>
+      <Label fx:id="currentTemp" layoutX="230.0" layoutY="412.0" text="..." textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
