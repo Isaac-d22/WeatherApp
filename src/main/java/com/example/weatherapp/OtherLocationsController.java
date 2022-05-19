@@ -17,10 +17,7 @@ public class OtherLocationsController implements IPageController {
 
     @FXML
     private void initialize() {
-        LocalTime start = LocalTime.parse("09:00:00");
-        LocalTime stop = LocalTime.parse("21:00:00");
-        LocalTime current = LocalTime.now();
-        background.setStyle("-fx-background-color: #" + ((current.isAfter(start) && current.isBefore(stop))? "3e91cd" : "0b1924"));
+        AppController.setBackground(background);
     }
 
     @FXML
