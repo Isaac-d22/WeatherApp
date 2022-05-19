@@ -40,7 +40,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="windspeed" layoutX="46.0" layoutY="575.0" style="-fx-font-family: 'Lato Regular';" text="..." textFill="WHITE">
+      <Label fx:id="windspeed" alignment="CENTER" contentDisplay="CENTER" layoutX="44.0" layoutY="578.0" prefHeight="37.0" prefWidth="120.0" style="-fx-font-family: 'Lato Regular';" text="..." textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
@@ -50,12 +50,12 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="46.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Lato Light';" text="Wind speed">
+      <Text fill="WHITE" layoutX="43.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: 'Lato Light';" text="Wind speed">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Label fx:id="currentTemp" layoutX="46.0" layoutY="453.0" style="-fx-font-family: 'Lato Regular';" text="..." textFill="WHITE">
+      <Label fx:id="currentTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="453.0" prefHeight="37.0" prefWidth="130.0" style="-fx-font-family: 'Lato Regular';" text="..." textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
@@ -65,7 +65,7 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Label fx:id="chanceOfRain" layoutX="268.0" layoutY="453.0" style="-fx-font-family: 'Lato Regular';" text="..." textFill="WHITE">
+      <Label fx:id="chanceOfRain" alignment="CENTER" layoutX="270.0" layoutY="453.0" prefHeight="37.0" prefWidth="152.0" style="-fx-font-family: 'Lato Regular';" text="..." textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
