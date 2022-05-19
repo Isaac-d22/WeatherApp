@@ -7,10 +7,12 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AppController {
 	private HashMap<Page, Node> pageNodes = new HashMap<>();
+	public ArrayList<String> locations;
 
 	@FXML
 	private AnchorPane background;
@@ -18,6 +20,7 @@ public class AppController {
 	private AnchorPane page;
 	@FXML
 	private void initialize() throws IOException {
+		locations = new ArrayList<String>();
 		for (Page page: new Page[] {Page.Home, Page.Settings, Page.RoutePlanning, Page.MoreInfo, Page.ViewRoute, Page.OtherLocations}) {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(page.fxml));
 			AnchorPane pagePane = loader.load();

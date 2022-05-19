@@ -6,18 +6,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.MoreInfoController">
    <children>
       <Button contentDisplay="CENTER" layoutX="23.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#returnHome" text="Back" />
-      <VBox layoutY="130.0" prefHeight="579.0" prefWidth="450.0">
+      <VBox layoutY="238.0" prefHeight="554.0" prefWidth="450.0">
          <children>
-            <ListView fx:id="lv" prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="lv" prefHeight="234.0" prefWidth="450.0" />
          </children>
       </VBox>
-      <Label fx:id="name" alignment="CENTER" layoutX="142.0" layoutY="51.0" prefHeight="53.0" prefWidth="166.0" text="Unavailable" textFill="WHITE">
+      <Label fx:id="name" alignment="CENTER" layoutX="142.0" layoutY="185.0" prefHeight="53.0" prefWidth="166.0" text="Unavailable" textFill="WHITE">
          <font>
             <Font size="32.0" />
-         </font></Label>
+         </font>
+      </Label>
+      <Text fill="WHITE" layoutX="56.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="More Info">
+         <font>
+            <Font size="85.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
