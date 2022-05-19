@@ -6,9 +6,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="page" prefHeight="800.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.HomeController">
+<AnchorPane fx:id="page" prefHeight="800.0" prefWidth="450.0" stylesheets="@../../../style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.HomeController">
    <children>
-      <Label fx:id="currentTemperature" layoutX="149.0" layoutY="118.0" text=" 18°" textFill="WHITE">
+      <Label fx:id="currentTemperature" layoutX="149.0" layoutY="118.0" style="-fx-font-family: 'Work Sans Thin';" text=" 18°" textFill="WHITE">
          <font>
             <Font size="96.0" />
          </font>
