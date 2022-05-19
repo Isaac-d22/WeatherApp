@@ -27,9 +27,8 @@ public class MoreInfoController implements IPageController{
         LocalTime stop = LocalTime.parse("21:00:00");
         LocalTime current = LocalTime.now();
         background.setStyle("-fx-background-color: #" + ((current.isAfter(start) && current.isBefore(stop))? "3e91cd" : "0b1924"));
-        lv.getItems().add("Temperature: " + info.main.get("temp"));
-        lv.getItems().add("Wind: " + info.wind.get("speed"));
-        name.setText(info.name);
+        lv.getItems().add("Temperature: " + info.current.temp);
+        lv.getItems().add("Wind: " + info.current.wind_speed);
     }
 
     @FXML
