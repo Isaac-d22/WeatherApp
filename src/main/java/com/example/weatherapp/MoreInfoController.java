@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.input.DragEvent;
 import javafx.scene.layout.VBox;
 
 import java.time.LocalTime;
@@ -16,6 +17,8 @@ public class MoreInfoController implements IPageController{
     private AnchorPane page;
     @FXML
     private ListView lv;
+    @FXML
+    private Label name;
 
     @FXML
     private void initialize() {
@@ -26,9 +29,7 @@ public class MoreInfoController implements IPageController{
         background.setStyle("-fx-background-color: #" + ((current.isAfter(start) && current.isBefore(stop))? "3e91cd" : "0b1924"));
         lv.getItems().add("Temperature: " + info.main.get("temp"));
         lv.getItems().add("Wind: " + info.wind.get("speed"));
-        //currentTemperature.setText("Temperature: " + info.main.get("temp"));
-        //currentWind.setText("Rain: " + info.wind.get("speed"));
-        //v = new VBox(currentTemperature, currentWind);
+        name.setText(info.name);
     }
 
     @FXML
