@@ -15,7 +15,6 @@
             <Font size="128.0" />
          </font>
       </Label>
-      <Button layoutX="200.0" layoutY="331.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" text="Test" />
       <Button layoutY="692.0" mnemonicParsing="false" onMouseClicked="#openMoreInfo" prefHeight="78.0" prefWidth="144.0" text="More Info">
          <font>
             <Font size="18.0" />
