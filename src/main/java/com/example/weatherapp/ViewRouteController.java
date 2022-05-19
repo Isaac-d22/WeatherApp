@@ -5,6 +5,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -17,10 +19,24 @@ public class ViewRouteController implements IPageController{
     private AppController app;
     @FXML
     private AnchorPane background;
-    @FXML
-    private TableView locationTable;
+
     @FXML
     private Button loadResults;
+
+    @FXML
+    private TableView table;
+
+    @FXML
+    private TableColumn location1;
+
+    @FXML
+    private TableColumn temperature;
+
+    @FXML
+    private TableColumn rain;
+
+    @FXML
+    private TableColumn wind;
 
     @FXML
     private void initialize() {

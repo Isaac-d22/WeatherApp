@@ -1,3 +1,9 @@
 @font-face {
+    src: url('fonts/Lato-Light.ttf');
+}
+@font-face {
+    src: url('fonts/Lato-Regular.ttf');
+}
+@font-face {
     src: url('fonts/WorkSans-Thin.ttf');
 }

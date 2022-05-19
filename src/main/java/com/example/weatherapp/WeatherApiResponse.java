@@ -4,21 +4,12 @@ import java.util.HashMap;
 import java.util.List;
 
 public class WeatherApiResponse {
-
-    HashMap<String, Double> coord;
-    List<Weather> weather;
-    public String base;
-    HashMap<String, Double> main;
-    double visibility;
-    HashMap<String, Double> wind;
-    HashMap<String, Double> clouds;
-    double dt;
-    HashMap<String, Object> sys;
-    double timezone;
-    double id;
-    String name;
-    double cod;
-
+    double lat;
+    double lon;
+    String timezone;
+    double timezone_offset;
+    Current current;
+    List<Hourly> hourly;
 }
 
 class Weather {
@@ -27,3 +18,39 @@ class Weather {
     String description;
     String icon;
 }
+
+class Current{
+    String dt;
+    String sunrise;
+    String sunset;
+    String temp;
+    String feels_like;
+    String pressure;
+    String humidity;
+    String dew_point;
+    String uvi;
+    String clouds;
+    String visibility;
+    String wind_speed;
+    String wind_deg;
+    String wind_gust;
+    List<Weather> weather;
+}
+
+class Hourly{
+    String dt;
+    String temp;
+    String feels_like;
+    String pressure;
+    String humidity;
+    String dew_point;
+    String uvi;
+    String clouds;
+    String visibility;
+    String wind_speed;
+    String wind_deg;
+    String wind_gust;
+    List<Weather> weather;
+    String pop;
+}
+

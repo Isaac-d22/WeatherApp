@@ -33,8 +33,7 @@ public class ApiCaller {
             String lon = String.valueOf(longitudeDouble);
 
             Request weatherRequest = new Request.Builder()
-                    .url(String.format(
-                            "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s", lat, lon, weatherKey)).build();
+                    .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&exclude=minutely,daily&appid=%s", lat, lon, weatherKey)).build();
 
             ResponseBody weatherResponse = client.newCall(weatherRequest).execute().body();
             Gson weatherGson = new Gson();
@@ -51,8 +50,7 @@ public class ApiCaller {
                     .build();
 
             Request weatherRequest = new Request.Builder()
-                    .url(String.format(
-                            "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s", lat, lon, weatherKey)).build();
+                    .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&exclude=minutely,daily&appid=%s", lat, lon, weatherKey)).build();
 
             ResponseBody weatherResponse = client.newCall(weatherRequest).execute().body();
             Gson weatherGson = new Gson();
