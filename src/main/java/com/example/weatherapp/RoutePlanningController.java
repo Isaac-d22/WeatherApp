@@ -9,7 +9,6 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import org.w3c.dom.Text;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
