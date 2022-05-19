@@ -18,7 +18,7 @@ public class AppController {
 	private AnchorPane page;
 	@FXML
 	private void initialize() throws IOException {
-		for (Page page: new Page[] {Page.Home, Page.Settings, Page.RoutePlanning, Page.MoreInfo, Page.ViewRoute}) {
+		for (Page page: new Page[] {Page.Home, Page.Settings, Page.RoutePlanning, Page.MoreInfo, Page.ViewRoute, Page.OtherLocations}) {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(page.fxml));
 			AnchorPane pagePane = loader.load();
 			IPageController pageController = loader.getController();
