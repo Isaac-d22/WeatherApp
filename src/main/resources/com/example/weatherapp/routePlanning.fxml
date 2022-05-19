@@ -14,7 +14,7 @@
                 <Font size="96.0" />
             </font>
         </Label>
-        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openHome" text="back" />
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openHome" prefWidth="59.0" text="back" />
       <TextField layoutX="145.0" layoutY="254.0" />
       <TextArea layoutX="90.0" layoutY="385.0" prefHeight="265.0" prefWidth="270.0" />
       <Label fx:id="currentTemperature1" alignment="CENTER" layoutX="75.0" layoutY="204.0" prefHeight="38.0" prefWidth="299.0" text="Please enter locations on route below:" textFill="WHITE">
@@ -22,10 +22,15 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="currentTemperature11" alignment="CENTER" layoutX="75.0" layoutY="331.0" prefHeight="38.0" prefWidth="299.0" text="List of locations:" textFill="WHITE">
+      <Label fx:id="currentTemperature11" alignment="CENTER" layoutX="75.0" layoutY="341.0" prefHeight="38.0" prefWidth="299.0" text="List of locations:" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <Button layoutX="145.0" layoutY="695.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="160.0" text="View route">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
