@@ -2,6 +2,8 @@ package com.example.weatherapp;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.time.LocalTime;
@@ -18,6 +20,8 @@ public class HomeController implements IPageController {
 	private Label location1;
 	@FXML
 	private Label windspeed;
+	@FXML
+	private ImageView weatherIcon;
 
 	@FXML
 	private Label chanceOfRain;
@@ -25,12 +29,12 @@ public class HomeController implements IPageController {
 	@FXML
 	private void initialize() {
 		WeatherApiResponse info = ApiCaller.getStatsAtStreetName("aan%27t%20verlaat%2033f%20");
-		LocalTime start = LocalTime.parse("09:00:00");
-		LocalTime stop = LocalTime.parse("21:00:00");
-		LocalTime current = LocalTime.now();
-		page.setStyle("-fx-background-color: #" + ((current.isAfter(start) && current.isBefore(stop))? "3e91cd" : "0b1924"));
+		AppController.setBackground(page);
 		currentTemp.setText(info.current.temp);
 		windspeed.setText(info.current.wind_speed);
+		assert(info.current.weather.size() == 1);
+		WeatherIcon icon = WeatherIcon.decode(info.current.weather.get(0).icon);
+		weatherIcon.setImage(new Image(getClass().getResource("/images/" + icon.image).toString()));
 	}
 
 

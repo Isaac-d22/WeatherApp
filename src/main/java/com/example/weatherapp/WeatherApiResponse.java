@@ -34,6 +34,9 @@ class Current{
     String wind_speed;
     String wind_deg;
     String wind_gust;
+    HashMap<String, String> rain = new HashMap<>(){{
+        put("1h", "0.00");
+    }};
     List<Weather> weather;
 }
 
@@ -50,7 +53,11 @@ class Hourly{
     String wind_speed;
     String wind_deg;
     String wind_gust;
+    HashMap<String, String> rain = new HashMap<>(){{
+        put("1h", "0.00");
+    }};
     List<Weather> weather;
     String pop;
 }
+
 

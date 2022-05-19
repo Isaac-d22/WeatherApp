@@ -55,6 +55,7 @@ public class ViewRouteController implements IPageController{
         temperature.setCellValueFactory(new PropertyValueFactory<>("temperature"));
         rain.setCellValueFactory(new PropertyValueFactory<>("rain"));
         wind.setCellValueFactory(new PropertyValueFactory<>("wind"));
+        AppController.setBackground(background);
     }
 
 
