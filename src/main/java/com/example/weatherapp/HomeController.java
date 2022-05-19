@@ -31,6 +31,8 @@ public class HomeController implements IPageController {
 		page.setStyle("-fx-background-color: #" + ((current.isAfter(start) && current.isBefore(stop))? "3e91cd" : "0b1924"));
 		currentTemp.setText(info.current.temp);
 		windspeed.setText(info.current.wind_speed);
+		assert(info.current.weather.size() == 1);
+		WeatherIcon icon = WeatherIcon.decode(info.current.weather.get(0).icon);
 	}
 
 
