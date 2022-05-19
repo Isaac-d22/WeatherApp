@@ -12,6 +12,6 @@
             <Font size="96.0" />
          </font>
       </Label>
-      <Button layoutX="50.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#openHome" text="Back" />
+      <Button layoutX="24.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openHome" prefHeight="27.0" prefWidth="60.0" text="Back" />
    </children>
 </AnchorPane>

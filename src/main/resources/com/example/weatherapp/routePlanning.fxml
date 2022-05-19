@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="450.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.RoutePlanningController">
     <children>
-        <Label alignment="CENTER" layoutX="4.0" layoutY="29.0" prefHeight="142.0" prefWidth="442.0" text="Plan route" textFill="WHITE">
+        <Label alignment="CENTER" layoutX="4.0" layoutY="29.0" prefHeight="142.0" prefWidth="442.0" text="Plan Route" textFill="WHITE">
             <font>
                 <Font size="96.0" />
             </font>
