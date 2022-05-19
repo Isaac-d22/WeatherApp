@@ -24,6 +24,8 @@ public class RoutePlanningController implements IPageController {
     private TextField inputLocation;
     @FXML
     private ListView locationsList;
+    @FXML
+    private Label errorLocation;
 
     @FXML
     private void initialize() {
@@ -52,8 +54,11 @@ public class RoutePlanningController implements IPageController {
     public void addLocation(MouseEvent mouseEvent) {
         String input = inputLocation.getText();
         // Santise input
-        if (!input.matches("[a-zA-Z0-9' ,]+") || input.isEmpty()){
+        if (!input.matches("[a-zA-Z0-9' ,]+") || input.isBlank()){
+            errorLocation.setText("Please enter a valid location!");
             return;
+        } else {
+            errorLocation.setText("");
         }
         locations.add(input);
         locationsList.getItems().add(input);

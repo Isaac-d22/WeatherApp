@@ -33,35 +33,35 @@
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Label fx:id="location1" layoutX="161.0" layoutY="391.0" text="..." textFill="WHITE">
+      <Label fx:id="location1" layoutX="161.0" layoutY="369.0" text="..." textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="currentTemp" layoutX="221.0" layoutY="434.0" prefHeight="19.0" prefWidth="0.0" text="..." textFill="WHITE">
+      <Label fx:id="windspeed" layoutX="209.0" layoutY="468.0" text="..." textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="windspeed" layoutX="209.0" layoutY="478.0" text="..." textFill="WHITE">
+      <Text fill="WHITE" layoutX="14.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location:">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="14.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature:">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="14.0" layoutY="503.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind speed:">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Label fx:id="currentTemp" layoutX="230.0" layoutY="412.0" text="..." textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Text fill="WHITE" layoutX="14.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location:">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Text>
-      <Text fill="WHITE" layoutX="14.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temperature:">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Text>
-      <Text fill="WHITE" layoutX="14.0" layoutY="513.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wind speed:">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Text>
    </children>
 </AnchorPane>
