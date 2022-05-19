@@ -31,7 +31,7 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="341.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openSettings" prefHeight="26.0" prefWidth="96.0" text="Settings">
+      <Button layoutX="354.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#openSettings" prefHeight="26.0" prefWidth="96.0" text="Settings">
          <font>
             <Font size="18.0" />
          </font></Button>
