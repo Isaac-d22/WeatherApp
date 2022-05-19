@@ -19,7 +19,7 @@ public class MoreInfoController implements IPageController{
 
     @FXML
     private void initialize() {
-        WeatherApiResponse info = ApiCaller.getStats("aan%27t%20verlaat%2033f%20");
+        WeatherApiResponse info = ApiCaller.getStatsAtStreetName("aan%27t%20verlaat%2033f%20");
         LocalTime start = LocalTime.parse("09:00:00");
         LocalTime stop = LocalTime.parse("21:00:00");
         LocalTime current = LocalTime.now();

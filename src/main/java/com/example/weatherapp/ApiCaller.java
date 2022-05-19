@@ -13,7 +13,7 @@ public class ApiCaller {
     private static final String geocodeKey = "ZmMyYjdmMjc1ZTQ2NGM4NjhjYTBkNTg2YTNmYzBhYWE6NTZlNTM1ZWYtMTlkZi00ODUzLWJjMTAtOTdlMmJiYTRlMGE0";
     private static final String weatherKey = "afcc86076e8c2f5fb1627987be38d419";
 
-    public static WeatherApiResponse getStats(String location){
+    public static WeatherApiResponse getStatsAtStreetName(String location){
         try{
             OkHttpClient client = new OkHttpClient().newBuilder()
                     .build();
@@ -31,6 +31,24 @@ public class ApiCaller {
             double longitudeDouble = (double)coords.get("longitude");
             String lat = String.valueOf(latitudeDouble);
             String lon = String.valueOf(longitudeDouble);
+
+            Request weatherRequest = new Request.Builder()
+                    .url(String.format(
+                            "https://api.openweathermap.org/data/2.5/weather?lat=%s&lon=%s&appid=%s", lat, lon, weatherKey)).build();
+
+            ResponseBody weatherResponse = client.newCall(weatherRequest).execute().body();
+            Gson weatherGson = new Gson();
+            return weatherGson.fromJson(weatherResponse.string(), WeatherApiResponse.class);
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public static WeatherApiResponse getStatsAtCoords(String lat, String lon) {
+        try{
+            OkHttpClient client = new OkHttpClient().newBuilder()
+                    .build();
 
             Request weatherRequest = new Request.Builder()
                     .url(String.format(
