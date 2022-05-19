@@ -59,9 +59,6 @@ public class RoutePlanningController implements IPageController {
         }
         locationsList.getItems().add(input);
         inputLocation.setText("");
-        input = input.replaceAll(" ", "%20");
-        input = input.replaceAll("'", "%27");
-        input = input.replaceAll(",", "%2C");
         app.locations.add(input);
     }
 
