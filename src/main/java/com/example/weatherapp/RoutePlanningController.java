@@ -2,11 +2,14 @@ package com.example.weatherapp;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import org.w3c.dom.Text;
 
 import java.time.LocalTime;
 
@@ -15,7 +18,9 @@ public class RoutePlanningController implements IPageController {
     @FXML
     private Pane background;
     @FXML
-    private Label currentTemperature;
+    private TextField inputLocation;
+    @FXML
+    private ListView locationsList;
 
     @FXML
     private void initialize() {
@@ -27,7 +32,7 @@ public class RoutePlanningController implements IPageController {
 
     @FXML
     protected void openHome() {
-        app.openPage(Page.ViewRoute);
+        app.openPage(Page.Home);
     }
 
     @FXML
@@ -38,5 +43,10 @@ public class RoutePlanningController implements IPageController {
     @Override
     public void setApp(AppController app) {
         this.app = app;
+    }
+
+    public void addLocation(MouseEvent mouseEvent) {
+        locationsList.getItems().add(inputLocation.getText());
+        inputLocation.setText("");
     }
 }
