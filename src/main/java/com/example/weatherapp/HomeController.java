@@ -30,6 +30,7 @@ public class HomeController implements IPageController {
 	private void initialize() {
 		WeatherApiResponse info = ApiCaller.getStatsAtStreetName("aan%27t%20verlaat%2033f%20");
 		AppController.setBackground(page);
+		currentTemperature.setText(" " + (int)(Double.parseDouble(info.current.temp) - 273.15 + 0.5) + "°");
 		currentTemp.setText(info.current.temp);
 		windspeed.setText(info.current.wind_speed);
 		assert(info.current.weather.size() == 1);
@@ -40,7 +41,7 @@ public class HomeController implements IPageController {
 
 	@FXML
 	protected void onButtonClick() {
-		currentTemperature.setText("-2°");
+		//currentTemperature.setText("-2°");
 	}
 
 	@FXML
