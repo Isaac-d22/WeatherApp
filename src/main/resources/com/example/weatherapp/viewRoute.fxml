@@ -16,7 +16,7 @@
     </Label>
     <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openRoutePlanning" text="back" />
    <Accordion layoutX="117.0" layoutY="196.0" />
-   <TableView layoutX="36.0" layoutY="91.0" prefHeight="591.0" prefWidth="386.0">
+   <TableView fx:id="locationTable" layoutX="35.0" layoutY="147.0" prefHeight="591.0" prefWidth="386.0">
      <columns>
        <TableColumn prefWidth="180.0" text="Location:" />
        <TableColumn prefWidth="83.0" text="Temperature:" />
@@ -24,5 +24,6 @@
          <TableColumn prefWidth="75.0" text="Wind speed:" />
      </columns>
    </TableView>
+   <Button fx:id="loadResults" layoutX="184.0" layoutY="99.0" mnemonicParsing="false" onMouseReleased="#loadRoute" text="See weather" />
     
 </AnchorPane>
