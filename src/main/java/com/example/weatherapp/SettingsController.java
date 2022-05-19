@@ -43,6 +43,10 @@ public class SettingsController implements IPageController {
         temperature.getItems().addAll("Celsius", "Fahrenheit");
         windSpeed.getItems().addAll("km/h", "mph");
         distance.getItems().addAll("kilometers", "miles");
+
+        temperature.setValue("Celsius");
+        windSpeed.setValue("km/h");
+        distance.setValue("kilometers");
     }
 
     @FXML
