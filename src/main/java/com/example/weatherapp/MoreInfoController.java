@@ -23,10 +23,7 @@ public class MoreInfoController implements IPageController{
     @FXML
     private void initialize() {
         WeatherApiResponse info = ApiCaller.getStatsAtStreetName("aan%27t%20verlaat%2033f%20");
-        LocalTime start = LocalTime.parse("09:00:00");
-        LocalTime stop = LocalTime.parse("21:00:00");
-        LocalTime current = LocalTime.now();
-        background.setStyle("-fx-background-color: #" + ((current.isAfter(start) && current.isBefore(stop))? "3e91cd" : "0b1924"));
+        AppController.setBackground(background);
         lv.getItems().add("Temperature: " + info.current.temp);
         lv.getItems().add("Wind: " + info.current.wind_speed);
     }

@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.time.LocalTime;
@@ -29,10 +30,7 @@ public class AppController {
 			pageNodes.put(page, pagePane);
 		}
 
-		LocalTime start = LocalTime.parse("09:00:00");
-		LocalTime stop = LocalTime.parse("21:00:00");
-		LocalTime current = LocalTime.now();
-		background.setStyle("-fx-background-color: #" + ((current.isAfter(start) && current.isBefore(stop))? "3e91cd" : "0b1924"));
+		setBackground(background);
 
 		background.getChildren().remove(0);
 		background.getChildren().add(pageNodes.get(Page.Home));
@@ -41,5 +39,13 @@ public class AppController {
 	public void openPage(Page page) {
 		background.getChildren().remove(0);
 		background.getChildren().add(pageNodes.getOrDefault(page, pageNodes.get(Page.Home)));
+	}
+
+	public static void setBackground(Pane page) {
+		LocalTime start = LocalTime.parse("09:00:00");
+		LocalTime stop = LocalTime.parse("21:00:00");
+		LocalTime current = LocalTime.now();
+		page.setStyle("-fx-background-color: #" + ((current.isAfter(start) && current.isBefore(stop))? "3e91cd" : "0b1924"));
+
 	}
 }
