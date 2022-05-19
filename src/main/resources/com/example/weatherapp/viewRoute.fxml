@@ -9,19 +9,19 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="450.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.ViewRouteController">
-    <Label fx:id="currentTemperature" alignment="CENTER" layoutX="55.0" layoutY="14.0" prefHeight="41.0" prefWidth="343.0" text="Route" textFill="WHITE">
+    <Label fx:id="currentTemperature" alignment="CENTER" layoutX="35.0" prefHeight="104.0" prefWidth="386.0" text="Route" textFill="WHITE">
         <font>
-            <Font size="63.0" />
+            <Font size="85.0" />
         </font>
     </Label>
-    <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openRoutePlanning" text="back" />
+    <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openRoutePlanning" text="Back" />
    <Accordion layoutX="117.0" layoutY="196.0" />
    <TableView fx:id="table" layoutX="36.0" layoutY="91.0" prefHeight="591.0" prefWidth="386.0">
      <columns>
        <TableColumn fx:id="location1" prefWidth="180.0" text="Location:" />
        <TableColumn fx:id="temperature" prefWidth="83.0" text="Temperature:" />
-         <TableColumn fx:id = "rain" prefWidth="47.0" text="\% rain:" />
-         <TableColumn fx:id = "wind" prefWidth="75.0" text="Wind speed:" />
+         <TableColumn fx:id="rain" prefWidth="47.0" text="\% rain:" />
+         <TableColumn fx:id="wind" prefWidth="75.0" text="Wind speed:" />
      </columns>
    </TableView>
     

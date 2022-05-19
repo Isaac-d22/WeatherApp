@@ -14,29 +14,29 @@
                 <Font size="85.0" />
             </font>
         </Label>
-        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openHome" prefWidth="59.0" text="back" />
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openHome" prefWidth="59.0" text="Back" />
       <TextField fx:id="inputLocation" layoutX="88.0" layoutY="235.0" prefHeight="38.0" prefWidth="202.0" />
-      <Label alignment="CENTER" layoutX="50.0" layoutY="194.0" prefHeight="38.0" prefWidth="366.0" text="Please enter locations on route below:" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="90.0" layoutY="194.0" prefHeight="38.0" prefWidth="285.0" text="Please enter locations on route below:" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="76.0" layoutY="305.0" prefHeight="38.0" prefWidth="299.0" text="List of locations:" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="90.0" layoutY="305.0" prefHeight="38.0" prefWidth="285.0" text="List of locations:" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="153.0" layoutY="694.0" mnemonicParsing="false" onMouseClicked="#openViewRoute" prefHeight="76.0" prefWidth="160.0" text="View route">
+      <Button alignment="CENTER" layoutX="153.0" layoutY="694.0" mnemonicParsing="false" onMouseClicked="#openViewRoute" prefHeight="76.0" prefWidth="160.0" text="View Route">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="299.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#addLocation" prefHeight="38.0" prefWidth="76.0" text="Add stop" />
+      <Button alignment="CENTER" layoutX="299.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#addLocation" prefHeight="38.0" prefWidth="76.0" text="Add Stop" />
       <ListView fx:id="locationsList" layoutX="90.0" layoutY="343.0" prefHeight="283.0" prefWidth="285.0" />
       <Label fx:id="errorLocation" alignment="CENTER" layoutX="88.0" layoutY="284.0" prefHeight="17.0" prefWidth="275.0" textAlignment="CENTER" textFill="#ffe81a">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Button alignment="CENTER" layoutX="178.0" layoutY="635.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="110.0" text="Clear Locations" onMouseClicked="#clearLocations" />
+      <Button alignment="CENTER" layoutX="178.0" layoutY="635.0" mnemonicParsing="false" onMouseClicked="#clearLocations" prefHeight="32.0" prefWidth="110.0" text="Clear Locations" />
     </children>
 </AnchorPane>
