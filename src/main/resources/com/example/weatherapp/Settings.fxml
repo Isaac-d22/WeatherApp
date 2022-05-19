@@ -53,8 +53,8 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <CheckBox layoutX="261.0" layoutY="442.0" mnemonicParsing="false" />
-      <CheckBox layoutX="261.0" layoutY="485.0" mnemonicParsing="false" />
+      <CheckBox layoutX="261.0" layoutY="442.0" mnemonicParsing="false" selected="true"/>
+      <CheckBox layoutX="261.0" layoutY="485.0" mnemonicParsing="false"/>
       <CheckBox layoutX="261.0" layoutY="528.0" mnemonicParsing="false" />
       <CheckBox layoutX="261.0" layoutY="571.0" mnemonicParsing="false" />
       <CheckBox layoutX="261.0" layoutY="614.0" mnemonicParsing="false" />
