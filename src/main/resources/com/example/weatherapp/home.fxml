@@ -40,7 +40,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="windspeed" alignment="CENTER" contentDisplay="CENTER" layoutX="44.0" layoutY="578.0" prefHeight="37.0" prefWidth="120.0" style="-fx-font-family: 'Lato Regular';" text="..." textFill="WHITE">
+      <Label fx:id="windspeed" alignment="CENTER" contentDisplay="CENTER" layoutX="44.0" layoutY="568.0" prefHeight="37.0" prefWidth="120.0" style="-fx-font-family: 'Lato Regular';" text="..." textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
