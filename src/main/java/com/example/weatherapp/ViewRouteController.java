@@ -4,12 +4,10 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
@@ -71,17 +69,22 @@ public class ViewRouteController implements IPageController{
 
     public void loadRoute(MouseEvent mouseEvent) {
         ObservableList<WeatherInfo> data = FXCollections.observableArrayList();
-        loadButton.setText("Loading...");
-        ArrayList<WeatherInfo> weatherInfo;
         for (String location : app.locations) {
             String placeName = location;
             location = location.replaceAll(" ", "%20");
             location = location.replaceAll("'", "%27");
             location = location.replaceAll(",", "%2C");
             WeatherApiResponse weatherAtLocation = ApiCaller.getStatsAtStreetName(location);
-            String temp = weatherAtLocation.current.temp;
-            String rainChance = "";
-            String windSpeed = weatherAtLocation.current.wind_speed;
+            String temp, rainChance, windSpeed;
+            if (weatherAtLocation == null) {
+                temp = "N/A";
+                rainChance = "N/A";
+                windSpeed = "N/A";
+            } else {
+                temp = ApiCaller.kelvinToCelcius(weatherAtLocation.current.temp);
+                rainChance = String.valueOf(Double.parseDouble(weatherAtLocation.hourly.get(0).pop) * 100);
+                windSpeed = weatherAtLocation.current.wind_speed;
+            }
             WeatherInfo info = new WeatherInfo(placeName, temp, rainChance, windSpeed);
             data.add(info);
         }

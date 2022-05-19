@@ -1,33 +1,31 @@
 package com.example.weatherapp;
 
-import javafx.beans.property.SimpleStringProperty;
-
 public class WeatherInfo {
-    private SimpleStringProperty placeName;
-    private SimpleStringProperty temperature;
-    private SimpleStringProperty rainChance;
-    private SimpleStringProperty windSpeed;
+    private String placeName;
+    private String temperature;
+    private String rainChance;
+    private String windSpeed;
 
     public WeatherInfo(String placeName, String temperature, String rainChance, String windSpeed) {
-        this.placeName = new SimpleStringProperty(placeName);
-        this.temperature = new SimpleStringProperty(temperature);
-        this.rainChance = new SimpleStringProperty(rainChance);
-        this.windSpeed = new SimpleStringProperty(windSpeed);
+        this.placeName = placeName;
+        this.temperature = temperature;
+        this.rainChance = rainChance;
+        this.windSpeed = windSpeed;
     }
 
     public String getLocation1() {
-        return placeName.get();
+        return placeName;
     }
 
     public String getTemperature() {
-        return temperature.get();
+        return temperature;
     }
 
     public String getRain(){
-        return rainChance.get();
+        return rainChance;
     }
 
     public String getWind() {
-        return windSpeed.get();
+        return windSpeed;
     }
 }
