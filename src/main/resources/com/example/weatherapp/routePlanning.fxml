@@ -14,7 +14,7 @@
                 <Font size="96.0" />
             </font>
         </Label>
-        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#onButtonClick" text="back" />
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#openHome" text="back" />
       <TextField layoutX="145.0" layoutY="254.0" />
       <TextArea layoutX="90.0" layoutY="385.0" prefHeight="265.0" prefWidth="270.0" />
       <Label fx:id="currentTemperature1" alignment="CENTER" layoutX="75.0" layoutY="204.0" prefHeight="38.0" prefWidth="299.0" text="Please enter locations on route below:" textFill="WHITE">

@@ -26,11 +26,6 @@ public class RoutePlanningController implements IPageController {
     }
 
     @FXML
-    protected void onButtonClick() {
-        currentTemperature.setText("-2°");
-    }
-
-    @FXML
     protected void openHome() {
         app.openPage(Page.Home);
     }
