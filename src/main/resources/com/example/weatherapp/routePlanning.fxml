@@ -27,7 +27,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="145.0" layoutY="695.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="160.0" text="View route">
+      <Button layoutX="145.0" layoutY="695.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="160.0" text="View route" onMouseClicked="#openViewRoute">
          <font>
             <Font size="24.0" />
          </font>

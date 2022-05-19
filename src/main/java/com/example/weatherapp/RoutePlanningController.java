@@ -27,7 +27,12 @@ public class RoutePlanningController implements IPageController {
 
     @FXML
     protected void openHome() {
-        app.openPage(Page.Home);
+        app.openPage(Page.ViewRoute);
+    }
+
+    @FXML
+    protected void openViewRoute() {
+        app.openPage(Page.ViewRoute);
     }
 
     @Override

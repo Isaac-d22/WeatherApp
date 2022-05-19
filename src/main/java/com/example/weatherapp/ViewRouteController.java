@@ -6,7 +6,8 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Pane;
 
-public class ViewRouteController {
+public class ViewRouteController implements IPageController{
+    private AppController app;
     @FXML
     private Pane backgroundPane;
     @FXML
@@ -19,5 +20,10 @@ public class ViewRouteController {
     @FXML
     protected void onButtonClick() {
         currentTemperature.setText("-2°");
+    }
+
+    @Override
+    public void setApp(AppController app) {
+        this.app = app;
     }
 }
