@@ -54,7 +54,7 @@ public class RoutePlanningController implements IPageController {
     public void addLocation(MouseEvent mouseEvent) {
         String input = inputLocation.getText();
         // Santise input
-        if (!input.matches("[a-zA-Z0-9' ,]+") || input.isEmpty()){
+        if (!input.matches("[a-zA-Z0-9' ,]+") || input.isBlank()){
             errorLocation.setText("Please enter a valid location!");
             return;
         } else {
