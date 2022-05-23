@@ -34,7 +34,7 @@
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Label fx:id="location1" alignment="CENTER" contentDisplay="CENTER" layoutX="98.0" layoutY="15.0" prefWidth="256.0" style="-fx-font-family: 'Lato Regular';" text="..." textFill="WHITE">
+      <Label fx:id="location1" alignment="CENTER" contentDisplay="CENTER" layoutX="98.0" layoutY="15.0" prefWidth="256.0" style="-fx-font-family: 'Lato Regular';" text="Cambridge" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>

@@ -24,8 +24,15 @@ public class MoreInfoController implements IPageController{
     private void initialize() {
         WeatherApiResponse info = ApiCaller.getStatsAtStreetName("aan%27t%20verlaat%2033f%20");
         AppController.setBackground(background);
-        lv.getItems().add("Temperature: " + info.current.temp);
-        lv.getItems().add("Wind: " + info.current.wind_speed);
+        lv.getItems().add("Temperature: " + ApiCaller.kelvinToCelcius(info.current.temp));
+        lv.getItems().add("Wind: " + info.current.wind_speed + "mph");
+        lv.getItems().add("Pressure: " + info.current.pressure + "Pa");
+        lv.getItems().add("Visibility: " + info.current.visibility + "m");
+        lv.getItems().add("Cloud cover: " + info.current.clouds + "%");
+        lv.getItems().add("UV Index: " + info.current.uvi);
+        lv.getItems().add("Wind bearing " + info.current.wind_deg + "º");
+        lv.getItems().add("Feels like temp: " + ApiCaller.kelvinToCelcius(info.current.feels_like));
+        lv.getItems().add("Humidity: " + info.current.humidity + "%");
     }
 
     @FXML

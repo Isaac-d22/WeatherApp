@@ -28,11 +28,12 @@ public class HomeController implements IPageController {
 
 	@FXML
 	private void initialize() {
-		WeatherApiResponse info = ApiCaller.getStatsAtStreetName("aan%27t%20verlaat%2033f%20");
+		WeatherApiResponse info = ApiCaller.getStatsAtStreetName("Cambridge, England");
 		AppController.setBackground(page);
 		currentTemperature.setText(" " + (int)(Double.parseDouble(info.current.temp) - 273.15 + 0.5) + "°");
-		currentTemp.setText(info.current.temp);
-		windspeed.setText(info.current.wind_speed);
+		currentTemp.setText(ApiCaller.kelvinToCelcius(info.current.temp));
+		windspeed.setText(info.current.wind_speed + "mph");
+		chanceOfRain.setText(String.valueOf(Double.parseDouble(info.hourly.get(0).pop) * 100) + "%");
 		assert(info.current.weather.size() == 1);
 		WeatherIcon icon = WeatherIcon.decode(info.current.weather.get(0).icon);
 		weatherIcon.setImage(new Image(getClass().getResource("/images/" + icon.image).toString()));
