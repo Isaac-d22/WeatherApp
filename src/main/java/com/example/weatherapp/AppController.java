@@ -13,12 +13,14 @@ import java.util.HashMap;
 
 public class AppController {
 	private HashMap<Page, Node> pageNodes = new HashMap<>();
+	private HashMap<Page, IPageController> pageControllers = new HashMap<>();
 	public ArrayList<String> locations;
 
 	@FXML
 	private AnchorPane background;
 	@FXML
 	private AnchorPane page;
+
 	@FXML
 	private void initialize() throws IOException {
 		locations = new ArrayList<String>();
@@ -28,6 +30,7 @@ public class AppController {
 			IPageController pageController = loader.getController();
 			pageController.setApp(this);
 			pageNodes.put(page, pagePane);
+			pageControllers.put(page, pageController);
 		}
 
 		setBackground(background);
@@ -37,6 +40,10 @@ public class AppController {
 	}
 
 	public void openPage(Page page) {
+		if(page.equals(Page.Home) || page.equals(Page.MoreInfo)){
+			IPageController pageController = pageControllers.get(page);
+			pageController.update();
+		}
 		background.getChildren().remove(0);
 		background.getChildren().add(pageNodes.getOrDefault(page, pageNodes.get(Page.Home)));
 	}

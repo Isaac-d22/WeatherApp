@@ -1,5 +1,8 @@
 package com.example.weatherapp;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -29,7 +32,7 @@ public class SettingsController implements IPageController {
     private Label currentTemperature;
 
     @FXML
-    private ChoiceBox temperature;
+    private ChoiceBox weatherUnits;
 
     @FXML
     private ChoiceBox windSpeed;
@@ -40,18 +43,37 @@ public class SettingsController implements IPageController {
     @FXML
     private void initialize() {
         AppController.setBackground(background);
-        temperature.getItems().addAll("Celsius", "Fahrenheit");
+        String[] units = {"Metric", "Imperial"};
+        weatherUnits.setItems(FXCollections.observableArrayList(units));
         windSpeed.getItems().addAll("km/h", "mph");
         distance.getItems().addAll("kilometers", "miles");
 
-        temperature.setValue("Celsius");
+        weatherUnits.setValue("Metric");
         windSpeed.setValue("km/h");
         distance.setValue("kilometers");
+
+        weatherUnits.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<>() {
+
+            // if the item of the list is changed
+            public void changed(ObservableValue ov, Number value, Number new_value)
+            {
+
+                // set the text for the label to the selected item
+                System.out.println("Done3");
+
+                ApiCaller.setUnits(units[(int) new_value]);
+            }
+        });
     }
 
     @FXML
     protected void onButtonClick() {
         currentTemperature.setText("-2°");
+    }
+
+    @FXML
+    protected void input(){
+
     }
 
     @FXML

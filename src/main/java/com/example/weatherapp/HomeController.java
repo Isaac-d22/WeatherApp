@@ -28,10 +28,27 @@ public class HomeController implements IPageController {
 
 	@FXML
 	private void initialize() {
+		System.out.println("Done2");
 		WeatherApiResponse info = ApiCaller.getStatsAtStreetName("Cambridge, England");
 		AppController.setBackground(page);
-		currentTemperature.setText(" " + (int)(Double.parseDouble(info.current.temp) - 273.15 + 0.5) + "°");
-		currentTemp.setText(ApiCaller.kelvinToCelcius(info.current.temp));
+		currentTemperature.setText(" " + info.current.temp + "°");
+		currentTemp.setText(info.current.temp);
+
+		windspeed.setText(info.current.wind_speed + "mph");
+		chanceOfRain.setText(String.valueOf(Double.parseDouble(info.hourly.get(0).pop) * 100) + "%");
+		assert(info.current.weather.size() == 1);
+		WeatherIcon icon = WeatherIcon.decode(info.current.weather.get(0).icon);
+		weatherIcon.setImage(new Image(getClass().getResource("/images/" + icon.image).toString()));
+	}
+
+	@Override
+	public void update(){
+		System.out.println("Done1");
+		WeatherApiResponse info = ApiCaller.getStatsAtStreetName("Cambridge, England");
+		AppController.setBackground(page);
+		currentTemperature.setText(" " + info.current.temp + "°");
+		currentTemp.setText(info.current.temp);
+
 		windspeed.setText(info.current.wind_speed + "mph");
 		chanceOfRain.setText(String.valueOf(Double.parseDouble(info.hourly.get(0).pop) * 100) + "%");
 		assert(info.current.weather.size() == 1);

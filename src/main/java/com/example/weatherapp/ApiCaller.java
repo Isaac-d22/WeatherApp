@@ -12,6 +12,7 @@ public class ApiCaller {
 
     private static final String geocodeKey = "ZmMyYjdmMjc1ZTQ2NGM4NjhjYTBkNTg2YTNmYzBhYWE6NTZlNTM1ZWYtMTlkZi00ODUzLWJjMTAtOTdlMmJiYTRlMGE0";
     private static final String weatherKey = "afcc86076e8c2f5fb1627987be38d419";
+    private static String weatherUnits = "metric";
 
     public static String kelvinToCelcius(String temp) {
         return (int)(Double.parseDouble(temp) - 273.15 + 0.5) + "°";
@@ -42,7 +43,7 @@ public class ApiCaller {
             String lon = String.valueOf(longitudeDouble);
 
             Request weatherRequest = new Request.Builder()
-                    .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&exclude=minutely,daily&appid=%s", lat, lon, weatherKey)).build();
+                    .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&units=%s&exclude=minutely,daily&appid=%s", lat, lon, weatherUnits, weatherKey)).build();
 
             ResponseBody weatherResponse = client.newCall(weatherRequest).execute().body();
             Gson weatherGson = new Gson();
@@ -59,7 +60,7 @@ public class ApiCaller {
                     .build();
 
             Request weatherRequest = new Request.Builder()
-                    .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&exclude=minutely,daily&appid=%s", lat, lon, weatherKey)).build();
+                    .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&units=%s&exclude=minutely,daily&appid=%s", lat, lon, weatherUnits, weatherKey)).build();
 
             ResponseBody weatherResponse = client.newCall(weatherRequest).execute().body();
             Gson weatherGson = new Gson();
@@ -67,6 +68,13 @@ public class ApiCaller {
         } catch (IOException e){
             System.out.println(e.getMessage());
             return null;
+        }
+    }
+
+    public static void setUnits(String unit){
+        unit = unit.toLowerCase();
+        if(unit.equals("metric") || unit.equals("imperial")){
+            weatherUnits = unit;
         }
     }
 }
