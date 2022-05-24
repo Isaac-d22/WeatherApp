@@ -18,7 +18,7 @@ public class MoreInfoController implements IPageController{
 
     @FXML
     private void initialize() {
-        WeatherApiResponse info = ApiCaller.getWeather(ApiCaller.getGeocode("aan%27t%20verlaat%2033f%20"));
+        WeatherApiResponse info = ApiCaller.getWeather(ApiCaller.getGeocode("Cambridge, England"));
         AppController.setBackground(background);
         lv.getItems().add("Temperature: " + ApiCaller.kelvinToCelcius(info.current.temp));
         lv.getItems().add("Wind: " + info.current.wind_speed + "mph");
