@@ -30,7 +30,7 @@ public class ApiCaller {
 
         try {
             return new Geolocation(new Gson().fromJson(client.newCall(geocodeRequest).execute().body().string(), GeocodeApiResponse.class));
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
