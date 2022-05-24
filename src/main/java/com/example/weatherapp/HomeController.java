@@ -31,10 +31,10 @@ public class HomeController implements IPageController {
 		WeatherApiResponse info = ApiCaller.getWeather(ApiCaller.getGeocode("Cambridge, England"));
 		System.out.println("Done2");
 		AppController.setBackground(page);
-		currentTemperature.setText(" " + info.current.temp + "°");
+		currentTemperature.setText(" " + info.current.temp);
 		currentTemp.setText(info.current.temp);
 
-		windspeed.setText(info.current.wind_speed + "mph");
+		windspeed.setText(info.current.wind_speed);
 		chanceOfRain.setText(String.valueOf(Double.parseDouble(info.hourly.get(0).pop) * 100) + "%");
 		assert(info.current.weather.size() == 1);
 		WeatherIcon icon = WeatherIcon.decode(info.current.weather.get(0).icon);
@@ -46,9 +46,9 @@ public class HomeController implements IPageController {
 		System.out.println("Done1");
 		WeatherApiResponse info = ApiCaller.getWeather(ApiCaller.getGeocode("Cambridge, England"));
 		AppController.setBackground(page);
-		currentTemperature.setText(" " + info.current.temp + "°");
+		currentTemperature.setText(" " + info.current.temp);
 		currentTemp.setText(info.current.temp);
-		windspeed.setText(info.current.wind_speed + "mph");
+		windspeed.setText(info.current.wind_speed);
 		chanceOfRain.setText(String.valueOf(Double.parseDouble(info.hourly.get(0).pop) * 100) + "%");
 		assert(info.current.weather.size() == 1);
 		WeatherIcon icon = WeatherIcon.decode(info.current.weather.get(0).icon);

@@ -43,6 +43,9 @@ public class AppController {
 		if(page.equals(Page.Home) || page.equals(Page.MoreInfo)){
 			IPageController pageController = pageControllers.get(page);
 			pageController.update();
+		}if(page.equals(Page.OtherLocations)){
+			IPageController pageController = pageControllers.get(page);
+			pageController.update();
 		}
 		background.getChildren().remove(0);
 		background.getChildren().add(pageNodes.getOrDefault(page, pageNodes.get(Page.Home)));

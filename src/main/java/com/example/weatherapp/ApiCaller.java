@@ -43,7 +43,7 @@ public class ApiCaller {
                 .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&units=%s&exclude=minutely,daily&appid=%s", String.valueOf(gl.latitude), String.valueOf(gl.longitude), weatherUnits, weatherKey)).build();
         try {
             WeatherApiResponse info = new Gson().fromJson(client.newCall(weatherRequest).execute().body().string(), WeatherApiResponse.class);
-            info.prettify();
+            info.prettify(weatherUnits.equals("metric"));
             return info;
         } catch (IOException e) {
             System.out.println(e.getMessage());
