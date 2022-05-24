@@ -62,15 +62,16 @@ public class OtherLocationsController implements IPageController {
         }
         addedLocation.setText("");
         locations.add(apiCall);
-        updateLocationsPane();
+        update();
     }
 
     private void removeItem(int i) {
         locations.remove(i);
-        updateLocationsPane();
+        update();
     }
 
-    private void updateLocationsPane() {
+    @Override
+    public void update() {
         locationsPane.getChildren().clear();
         double offset = 0;
         int item = 0;

@@ -11,9 +11,11 @@ public class WeatherApiResponse {
     Current current;
     List<Hourly> hourly;
 
-    public void prettify(){
-        current.temp = String.valueOf((int) Double.parseDouble(current.temp));
-    }
+    public void prettify(boolean metric){
+        current.temp = String.format("%s°%s",String.valueOf((int) Double.parseDouble(current.temp)), (metric? "C" : "F"));
+        current.feels_like = String.format("%s°%s",String.valueOf((int) Double.parseDouble(current.feels_like)), (metric? "C" : "F"));
+        current.wind_speed = String.format("%s%s", current.wind_speed, (metric? "m/s": "mph"));
+     }
 }
 
 class Weather {
