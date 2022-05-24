@@ -1,15 +1,21 @@
 package com.example.weatherapp;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.Pane;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class ViewRouteController implements IPageController{
     private AppController app;
@@ -68,7 +74,7 @@ public class ViewRouteController implements IPageController{
             location = location.replaceAll(" ", "%20");
             location = location.replaceAll("'", "%27");
             location = location.replaceAll(",", "%2C");
-            WeatherApiResponse weatherAtLocation = ApiCaller.getWeather(ApiCaller.getGeocode(location));
+            WeatherApiResponse weatherAtLocation = ApiCaller.getStatsAtStreetName(location);
             String temp, rainChance, windSpeed;
             if (weatherAtLocation == null) {
                 temp = "N/A";

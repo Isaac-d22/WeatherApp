@@ -2,10 +2,9 @@ package com.example.weatherapp;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-import java.util.Map;
+import java.time.LocalTime;
 
 
 public class OtherLocationsController implements IPageController {
@@ -15,8 +14,6 @@ public class OtherLocationsController implements IPageController {
     private AnchorPane background;
     @FXML
     private Label currentTemperature;
-    @FXML
-    private TextField addedLocation;
 
     @FXML
     private void initialize() {
@@ -26,14 +23,6 @@ public class OtherLocationsController implements IPageController {
     @FXML
     protected void openHome() {
         app.openPage(Page.Home);
-    }
-
-    @FXML
-    protected void addLocation() {
-        String locationString = addedLocation.getText();
-        System.out.println(locationString);
-        Geolocation gl = ApiCaller.getGeocode(locationString);
-        System.out.println(gl.city + ", " + gl.state);
     }
 
     @Override
