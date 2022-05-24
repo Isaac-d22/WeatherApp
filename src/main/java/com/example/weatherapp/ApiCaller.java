@@ -17,54 +17,32 @@ public class ApiCaller {
         return (int)(Double.parseDouble(temp) - 273.15 + 0.5) + "°";
     }
 
-    public static WeatherApiResponse getStatsAtStreetName(String location){
-        try{
-            OkHttpClient client = new OkHttpClient().newBuilder()
-                    .build();
+    public static Geolocation getGeocode(String location) {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
 
-            Request geocodeRequest = new Request.Builder()
-                    .url(String.format(
-                            "https://api.myptv.com/geocoding/v1/locations/by-text?searchText=%s&apiKey=%s", location, geocodeKey)).build();
+        Request geocodeRequest = new Request.Builder()
+                .url(String.format(
+                        "https://api.myptv.com/geocoding/v1/locations/by-text?searchText=%s&apiKey=%s", location, geocodeKey)).build();
 
-            ResponseBody geocodeResponse = client.newCall(geocodeRequest).execute().body();
+        String geocodeResponseString;
 
-            Gson geocodeGson = new Gson();
-            GeocodeApiResponse geocode = geocodeGson.fromJson(geocodeResponse.string(), GeocodeApiResponse.class);
-            Map coords;
-            try {
-                coords = (Map<String, Double>) geocode.locations.get(0).get("referencePosition");
-            } catch (IndexOutOfBoundsException e) {
-                return null;
-            }
-            double latitudeDouble = (double)coords.get("latitude");
-            double longitudeDouble = (double)coords.get("longitude");
-            String lat = String.valueOf(latitudeDouble);
-            String lon = String.valueOf(longitudeDouble);
-
-            Request weatherRequest = new Request.Builder()
-                    .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&exclude=minutely,daily&appid=%s", lat, lon, weatherKey)).build();
-
-            ResponseBody weatherResponse = client.newCall(weatherRequest).execute().body();
-            Gson weatherGson = new Gson();
-            return weatherGson.fromJson(weatherResponse.string(), WeatherApiResponse.class);
-        } catch (IOException e){
+        try {
+            return new Geolocation(new Gson().fromJson(client.newCall(geocodeRequest).execute().body().string(), GeocodeApiResponse.class));
+        } catch (IOException e) {
             System.out.println(e.getMessage());
             return null;
         }
     }
 
-    public static WeatherApiResponse getStatsAtCoords(String lat, String lon) {
-        try{
-            OkHttpClient client = new OkHttpClient().newBuilder()
-                    .build();
-
-            Request weatherRequest = new Request.Builder()
-                    .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&exclude=minutely,daily&appid=%s", lat, lon, weatherKey)).build();
-
-            ResponseBody weatherResponse = client.newCall(weatherRequest).execute().body();
-            Gson weatherGson = new Gson();
-            return weatherGson.fromJson(weatherResponse.string(), WeatherApiResponse.class);
-        } catch (IOException e){
+    public static WeatherApiResponse getWeather(Geolocation gl) {
+        OkHttpClient client = new OkHttpClient().newBuilder()
+                .build();
+        Request weatherRequest = new Request.Builder()
+                .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&exclude=minutely,daily&appid=%s", String.valueOf(gl.latitude), String.valueOf(gl.longitude), weatherKey)).build();
+        try {
+            return new Gson().fromJson(client.newCall(weatherRequest).execute().body().string(), WeatherApiResponse.class);
+        } catch (IOException e) {
             System.out.println(e.getMessage());
             return null;
         }

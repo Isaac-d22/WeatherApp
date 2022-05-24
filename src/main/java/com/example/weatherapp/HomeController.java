@@ -6,8 +6,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-import java.time.LocalTime;
-
 public class HomeController implements IPageController {
 	private AppController app;
 	@FXML
@@ -28,7 +26,7 @@ public class HomeController implements IPageController {
 
 	@FXML
 	private void initialize() {
-		WeatherApiResponse info = ApiCaller.getStatsAtStreetName("Cambridge, England");
+		WeatherApiResponse info = ApiCaller.getWeather(ApiCaller.getGeocode("Cambridge, England"));
 		AppController.setBackground(page);
 		currentTemperature.setText(" " + (int)(Double.parseDouble(info.current.temp) - 273.15 + 0.5) + "°");
 		currentTemp.setText(ApiCaller.kelvinToCelcius(info.current.temp));
