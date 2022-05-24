@@ -75,7 +75,7 @@ public class ViewRouteController implements IPageController{
                 rainChance = "N/A";
                 windSpeed = "N/A";
             } else {
-                temp = ApiCaller.kelvinToCelcius(weatherAtLocation.current.temp);
+                temp = weatherAtLocation.current.temp;
                 rainChance = String.valueOf(Double.parseDouble(weatherAtLocation.hourly.get(0).pop) * 100);
                 windSpeed = weatherAtLocation.current.wind_speed;
             }
