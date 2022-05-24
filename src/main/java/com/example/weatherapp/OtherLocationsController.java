@@ -30,6 +30,8 @@ public class OtherLocationsController implements IPageController {
     private TextField addedLocation;
     @FXML
     private AnchorPane locationsPane;
+    @FXML
+    private Label errorLocation;
 
     @FXML
     private void initialize() {
@@ -44,7 +46,21 @@ public class OtherLocationsController implements IPageController {
 
     @FXML
     protected void addLocation() {
-        locations.add(ApiCaller.getGeocode(addedLocation.getText()));
+        String input = addedLocation.getText();
+        if (!input.matches("[a-zA-Z0-9' ,]+") || input.isBlank()){
+            errorLocation.setText("Please enter a valid location!");
+            return;
+        } else {
+            errorLocation.setText("");
+        }
+        Geolocation apiCall = ApiCaller.getGeocode(input);
+        if (apiCall == null) {
+            errorLocation.setText("Please enter a valid location!");
+            return;
+        } else {
+            errorLocation.setText("");
+        }
+        locations.add(apiCall);
         updateLocationsPane();
     }
 
