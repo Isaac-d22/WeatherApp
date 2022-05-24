@@ -40,9 +40,11 @@ public class ApiCaller {
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
         Request weatherRequest = new Request.Builder()
-                .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&exclude=minutely,daily&appid=%s", String.valueOf(gl.latitude), String.valueOf(gl.longitude), weatherKey)).build();
+                .url(String.format("https://api.openweathermap.org/data/2.5/onecall?lat=%s&lon=%s&units=%s&exclude=minutely,daily&appid=%s", String.valueOf(gl.latitude), String.valueOf(gl.longitude), weatherUnits, weatherKey)).build();
         try {
-            return new Gson().fromJson(client.newCall(weatherRequest).execute().body().string(), WeatherApiResponse.class);
+            WeatherApiResponse info = new Gson().fromJson(client.newCall(weatherRequest).execute().body().string(), WeatherApiResponse.class);
+            info.prettify();
+            return info;
         } catch (IOException e) {
             System.out.println(e.getMessage());
             return null;

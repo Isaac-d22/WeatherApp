@@ -85,7 +85,7 @@ public class OtherLocationsController implements IPageController {
             locationsPane.getChildren().add(location);
 
             Label temperature = new Label();
-            temperature.setText(ApiCaller.kelvinToCelcius(weather.current.temp));
+            temperature.setText(weather.current.temp);
             temperature.setFont(Font.font("Work Sans Thin", 48));
             temperature.setAlignment(Pos.CENTER_RIGHT);
             temperature.setPrefWidth(370);

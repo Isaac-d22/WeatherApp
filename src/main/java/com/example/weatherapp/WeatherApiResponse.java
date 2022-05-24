@@ -10,6 +10,10 @@ public class WeatherApiResponse {
     double timezone_offset;
     Current current;
     List<Hourly> hourly;
+
+    public void prettify(){
+        current.temp = String.valueOf((int) Double.parseDouble(current.temp));
+    }
 }
 
 class Weather {
