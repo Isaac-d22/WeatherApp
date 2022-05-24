@@ -59,8 +59,6 @@ public class SettingsController implements IPageController {
             {
 
                 // set the text for the label to the selected item
-                System.out.println("Done3");
-
                 ApiCaller.setUnits(units[(int) new_value]);
             }
         });

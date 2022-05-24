@@ -29,7 +29,6 @@ public class HomeController implements IPageController {
 	@FXML
 	private void initialize() {
 		WeatherApiResponse info = ApiCaller.getWeather(ApiCaller.getGeocode("Cambridge, England"));
-		System.out.println("Done2");
 		AppController.setBackground(page);
 		currentTemperature.setText(" " + info.current.temp);
 		currentTemp.setText(info.current.temp);
@@ -43,7 +42,6 @@ public class HomeController implements IPageController {
 
 	@Override
 	public void update(){
-		System.out.println("Done1");
 		WeatherApiResponse info = ApiCaller.getWeather(ApiCaller.getGeocode("Cambridge, England"));
 		AppController.setBackground(page);
 		currentTemperature.setText(" " + info.current.temp);

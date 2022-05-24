@@ -8,6 +8,8 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.Map;
 
+//This is the API caller
+//Uses Geocoding and OpenWeatherMapAPI
 public class ApiCaller {
 
     private static final String geocodeKey = "ZmMyYjdmMjc1ZTQ2NGM4NjhjYTBkNTg2YTNmYzBhYWE6NTZlNTM1ZWYtMTlkZi00ODUzLWJjMTAtOTdlMmJiYTRlMGE0";
