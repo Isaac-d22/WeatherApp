@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="450.0" style="-fx-background-color: #1e1e1e;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.weatherapp.ViewRouteController">
-    <Label fx:id="currentTemperature" alignment="CENTER" layoutX="35.0" prefHeight="104.0" prefWidth="386.0" text="Route" textFill="WHITE">
+    <Label fx:id="currentTemperature" alignment="CENTER" layoutX="35.0" prefHeight="104.0" prefWidth="386.0" text="Stops" textFill="WHITE">
         <font>
             <Font size="85.0" />
         </font>
