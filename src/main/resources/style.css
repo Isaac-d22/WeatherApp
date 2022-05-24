@@ -7,3 +7,9 @@
 @font-face {
     src: url('fonts/WorkSans-Thin.ttf');
 }
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+.text{
+    -fx-font-smoothing-type: gray;
+}
