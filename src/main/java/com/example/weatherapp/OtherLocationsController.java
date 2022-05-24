@@ -60,6 +60,7 @@ public class OtherLocationsController implements IPageController {
         } else {
             errorLocation.setText("");
         }
+        addedLocation.setText("");
         locations.add(apiCall);
         updateLocationsPane();
     }
