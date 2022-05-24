@@ -24,6 +24,7 @@ public class Application extends javafx.application.Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        System.setProperty("prism.lcdtext", "false");
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("app.fxml"));
         Parent root = fxmlLoader.load();
         appController = fxmlLoader.getController();
